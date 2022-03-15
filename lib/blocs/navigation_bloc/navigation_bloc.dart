@@ -22,7 +22,7 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
       emit(
         state.copyWith(
           status: NavigationStateStatus.tab,
-          currentIndex: event.menuIndex,
+          currentIndex: event.tabIndex,
           route: event.route,
         ),
       );

@@ -15,10 +15,10 @@ class NavigateMenu extends NavigationEvent {
 
 class NavigateTab extends NavigationEvent {
   NavigateTab({
-    required this.menuIndex,
+    required this.tabIndex,
     required this.route,
   });
 
-  final int menuIndex;
+  final int tabIndex;
   final String route;
 }

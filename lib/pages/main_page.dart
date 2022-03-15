@@ -83,7 +83,7 @@ class _MainPageState extends State<MainPage> {
                 onSelect: (int index) {
                   context.read<NavigationBloc>().add(
                         NavigateTab(
-                          menuIndex: index,
+                          tabIndex: index,
                           route: _pages[index],
                         ),
                       );

@@ -34,7 +34,7 @@ dependencies:
   bot_toast: ^4.0.1
   cached_network_image: ^3.2.0
   flutter_spinkit: ^5.1.0
-  flutter_svg: ^1.0.0
+  flutter_svg: ^1.0.3
   pull_to_refresh: ^2.0.0
 
   # Services
@@ -43,7 +43,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   hive_flutter: ^1.1.0
   jwt_decoder: ^2.0.1
-  path_provider: ^2.0.8
+  path_provider: ^2.0.9
   pretty_dio_logger: ^1.2.0-beta-1
 
 dev_dependencies:
@@ -69,9 +69,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/translations/
+    - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -54,7 +54,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         e.iconPath,
-                        color: AppColors.textSecondary,
+                        color: i == currentTab
+                            ? AppColors.textSecondary
+                            : AppColors.textPrimary,
                       ),
                       const SizedBox(
                         height: 3.0,
@@ -63,8 +65,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
                         e.title,
                         style: TextStyle(
                           color: i == currentTab
-                              ? AppColors.textPrimary
-                              : AppColors.textSecondary,
+                              ? AppColors.textSecondary
+                              : AppColors.textPrimary,
                           fontSize: 11.0,
                           height: 1.18,
                         ),

@@ -34,12 +34,14 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         final String? accessToken = user.accessToken;
         final String? refreshToken = user.refreshToken;
 
-        if (accessToken != null && refreshToken != null) {
-          if (JwtDecoder.isExpired(refreshToken)) {
-            /*context.read<AuthBloc>().add(
+        if (refreshToken == null || accessToken == null) {
+          return _navigateToPage(SignInPage.routeName);
+        }
+
+        if (JwtDecoder.isExpired(refreshToken)) {
+          /*context.read<AuthBloc>().add(
                   Logout(),
                 );*/
-          }
 
           return _navigateToPage(SignInPage.routeName);
         }

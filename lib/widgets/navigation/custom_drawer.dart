@@ -27,7 +27,7 @@ class CustomDrawer extends StatelessWidget {
           child: SafeArea(
             child: Column(
               children: [
-                if (!isAuthorized()) ...[
+                if (isAuthorized()) ...[
                   const Expanded(
                     child: _NoAuthMenu(),
                   ),
@@ -35,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
                   const Expanded(
                     child: _AuthMenu(),
                   ),
-                ]
+                ],
               ],
             ),
           ),
@@ -100,16 +100,19 @@ class _AuthMenu extends StatelessWidget {
   void _navigateToPage(
     BuildContext context, {
     required int index,
+    required int currentIndex,
     required String route,
   }) {
     Navigator.pop(context);
 
-    context.read<NavigationBloc>().add(
-          NavigateMenu(
-            menuIndex: index,
-            route: route,
-          ),
-        );
+    if (index != currentIndex) {
+      context.read<NavigationBloc>().add(
+            NavigateMenu(
+              menuIndex: index,
+              route: route,
+            ),
+          );
+    }
   }
 
   @override
@@ -125,7 +128,7 @@ class _AuthMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Вы авторизированы',
+                  'Вы успешно авторизованы в приложении',
                   style: TextStyle(
                     color: AppColors.textPrimary,
                     fontSize: 16.0,
@@ -136,7 +139,7 @@ class _AuthMenu extends StatelessWidget {
                   height: 16.0,
                 ),
                 CustomTextButton(
-                  title: 'Вход',
+                  title: 'Билеты',
                   style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,
@@ -144,11 +147,15 @@ class _AuthMenu extends StatelessWidget {
                   onTap: () => _navigateToPage(
                     context,
                     route: TicketsPage.routeName,
+                    currentIndex: state.currentIndex,
                     index: 0,
                   ),
                 ),
+                const SizedBox(
+                  height: 8.0,
+                ),
                 CustomTextButton(
-                  title: 'Вход',
+                  title: 'Профиль',
                   style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,
@@ -156,6 +163,7 @@ class _AuthMenu extends StatelessWidget {
                   onTap: () => _navigateToPage(
                     context,
                     route: ProfilePage.routeName,
+                    currentIndex: state.currentIndex,
                     index: 1,
                   ),
                 ),

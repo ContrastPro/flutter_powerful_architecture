@@ -1,6 +1,7 @@
 import 'package:file_structure_flutter/pages/auth_pages/sign_in_page/sign_in_page.dart';
 import 'package:file_structure_flutter/pages/main_page.dart';
 import 'package:file_structure_flutter/pages/profile_pages/profile_page/profile_page.dart';
+import 'package:file_structure_flutter/pages/tickets_pages/ticket_details_page/ticket_details_page.dart';
 import 'package:file_structure_flutter/pages/tickets_pages/tickets_page/ticket_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,13 @@ class AppRouter {
       // [END] Profile pages
 
       // [START] Tickets pages
+
+      case TicketDetailsPage.routeName:
+        final int args = arguments as int;
+        builder = (_) => TicketDetailsPage(
+              index: args,
+            );
+        break;
 
       case TicketsPage.routeName:
         builder = (_) => const TicketsPage();
