@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatefulWidget {
-  static const routeName = '/profile_page';
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
-  final int? id;
+  static const routeName = '/profile_pages/profile';
 
-  const ProfilePage({
-    Key? key,
-    this.id,
-  }) : super(key: key);
-
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Container();

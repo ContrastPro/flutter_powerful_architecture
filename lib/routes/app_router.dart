@@ -1,5 +1,7 @@
-import 'package:file_structure_flutter/pages/audio_pages/audio_page/audio_page.dart';
+import 'package:file_structure_flutter/pages/auth_pages/sign_in_page/sign_in_page.dart';
+import 'package:file_structure_flutter/pages/main_page.dart';
 import 'package:file_structure_flutter/pages/profile_pages/profile_page/profile_page.dart';
+import 'package:file_structure_flutter/pages/tickets_pages/tickets_page/ticket_page.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -11,22 +13,32 @@ class AppRouter {
     WidgetBuilder builder;
 
     switch (settings.name) {
-      case AudioPage.routeName:
-        final AudioPageArguments args = arguments as AudioPageArguments;
-        builder = (_) => AudioPage(
-              id: args.id,
-              name: args.name,
-            );
-        break;
-      case ProfilePage.routeName:
-        final int? args = arguments as int?;
-        builder = (_) => ProfilePage(
-              id: args,
-            );
+      // [START] Auth pages
+
+      case SignInPage.routeName:
+        builder = (_) => const SignInPage();
         break;
 
-      case HomePage.routeName:
-        builder = (_) => HomePage();
+      // [END] Auth pages
+
+      // [START] Profile pages
+
+      case ProfilePage.routeName:
+        builder = (_) => const ProfilePage();
+        break;
+
+      // [END] Profile pages
+
+      // [START] Tickets pages
+
+      case TicketsPage.routeName:
+        builder = (_) => const TicketsPage();
+        break;
+
+      // [END] Tickets pages
+
+      case MainPage.routeName:
+        builder = (_) => const MainPage();
         break;
 
       default:
