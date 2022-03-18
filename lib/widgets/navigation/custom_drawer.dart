@@ -26,7 +26,9 @@ class CustomDrawer extends StatelessWidget {
           ),
           child: SafeArea(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const _Logo(),
                 if (isAuthorized()) ...[
                   const Expanded(
                     child: _NoAuthMenu(),
@@ -40,6 +42,34 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _Logo extends StatelessWidget {
+  const _Logo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12.0,
+      ).copyWith(
+        bottom: 10.0,
+      ),
+      child: Row(
+        children: const [
+          Text(
+            'Powerful architecture',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: AppColors.textPrimary,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 1.2,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -127,21 +157,13 @@ class _AuthMenu extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Вы успешно авторизованы в приложении',
-                  style: TextStyle(
-                    color: AppColors.textPrimary,
-                    fontSize: 16.0,
-                  ),
-                  maxLines: 3,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
                 CustomTextButton(
                   title: 'Билеты',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18.0,
+                    color: state.currentIndex == 0
+                        ? AppColors.textSecondary
+                        : AppColors.textPrimary,
                     fontWeight: FontWeight.w500,
                   ),
                   onTap: () => _navigateToPage(
@@ -156,8 +178,11 @@ class _AuthMenu extends StatelessWidget {
                 ),
                 CustomTextButton(
                   title: 'Профиль',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18.0,
+                    color: state.currentIndex == 1
+                        ? AppColors.textSecondary
+                        : AppColors.textPrimary,
                     fontWeight: FontWeight.w500,
                   ),
                   onTap: () => _navigateToPage(

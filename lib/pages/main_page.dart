@@ -81,12 +81,14 @@ class _MainPageState extends State<MainPage> {
               bottomNavigationBar: CustomBottomNavigationBar(
                 currentTab: state.currentIndex,
                 onSelect: (int index) {
-                  context.read<NavigationBloc>().add(
-                        NavigateTab(
-                          tabIndex: index,
-                          route: _pages[index],
-                        ),
-                      );
+                  if (state.currentIndex != index) {
+                    context.read<NavigationBloc>().add(
+                          NavigateTab(
+                            tabIndex: index,
+                            route: _pages[index],
+                          ),
+                        );
+                  }
                 },
               ),
             ),
