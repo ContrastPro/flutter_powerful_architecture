@@ -1,6 +1,6 @@
 # Powerful architecture for Flutter apps
 
-A new Flutter project.
+A demo application that contains the basic principles of SOLID and Clean architecture for creating beautiful and scalable Flutter projects.
 
 ## Getting Started
 
