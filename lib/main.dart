@@ -61,7 +61,7 @@ class _App extends StatelessWidget {
       ],
       child: SystemOverlay(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
         child: MaterialApp(
           locale: context.locale,
           supportedLocales: context.supportedLocales,
@@ -71,7 +71,7 @@ class _App extends StatelessWidget {
             BotToastNavigatorObserver(),
           ],
           debugShowCheckedModeBanner: false,
-          title: 'Awesome architecture',
+          title: 'Powerful architecture',
           theme: AppThemes.light(),
           initialRoute: SplashScreenPage.routeName,
           onGenerateRoute: AppRouter.generateRoute,

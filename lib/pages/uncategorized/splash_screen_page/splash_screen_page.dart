@@ -61,7 +61,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primary,
       body: FadeInAnimation(
         duration: const Duration(
           milliseconds: 2000,
@@ -71,7 +70,18 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
           children: [
             Image.asset(
               AppImages.logo,
-              width: 280.0,
+              width: 350.0,
+            ),
+            const SizedBox(
+              height: 32.0,
+            ),
+            const Text(
+              'Powerful architecture',
+              style: TextStyle(
+                fontSize: 26.0,
+                color: AppColors.textPrimary,
+                fontWeight: FontWeight.w900,
+              ),
             ),
           ],
         ),
