@@ -68,12 +68,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              AppImages.logo,
-              width: 350.0,
-            ),
-            const SizedBox(
-              height: 32.0,
+            SizedBox(
+              width: double.infinity,
+              height: 250.0,
+              child: Image.asset(
+                AppImages.logo,
+                fit: BoxFit.cover,
+              ),
             ),
             const Text(
               'Powerful architecture',
