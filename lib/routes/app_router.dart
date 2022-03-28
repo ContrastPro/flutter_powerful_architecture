@@ -33,9 +33,11 @@ class AppRouter {
       // [START] Tickets pages
 
       case TicketDetailsPage.routeName:
-        final int args = arguments as int;
+        final TicketDetailsPageArguments args =
+            arguments as TicketDetailsPageArguments;
         builder = (_) => TicketDetailsPage(
-              index: args,
+              index: args.index,
+              title: args.title,
             );
         break;
 

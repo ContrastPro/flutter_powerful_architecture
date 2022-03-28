@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:file_structure_flutter/pages/tickets_pages/tickets_page/widgets/ticket_item.dart';
 import 'package:file_structure_flutter/resources/app_colors.dart';
 import 'package:file_structure_flutter/resources/app_icons.dart';
 import 'package:file_structure_flutter/widgets/navigation/custom_app_bar.dart';
+import 'package:file_structure_flutter/widgets/uncategorized/glow_scroll_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -42,13 +45,16 @@ class TicketsPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 50,
-              itemBuilder: (_, int i) {
-                return TicketItem(
-                  index: i,
-                );
-              },
+            child: GlowScrollIndicator(
+              enabled: !Platform.isAndroid,
+              child: ListView.builder(
+                itemCount: 50,
+                itemBuilder: (_, int i) {
+                  return TicketItem(
+                    index: i,
+                  );
+                },
+              ),
             ),
           )
         ],

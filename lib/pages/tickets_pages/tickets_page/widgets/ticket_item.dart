@@ -15,7 +15,10 @@ class TicketItem extends StatelessWidget {
       onTap: () => Navigator.pushNamed(
         context,
         TicketDetailsPage.routeName,
-        arguments: index,
+        arguments: TicketDetailsPageArguments(
+          index: index,
+          title: 'Item ${index + 1}',
+        ),
       ),
       behavior: HitTestBehavior.opaque,
       child: Container(
