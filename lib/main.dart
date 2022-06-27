@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:file_structure_flutter/database/local_database.dart';
-import 'package:file_structure_flutter/pages/uncategorized/splash_screen_page/splash_screen_page.dart';
+import 'package:file_structure_flutter/pages/uncategorized_pages/splash_screen_page/splash_screen_page.dart';
 import 'package:file_structure_flutter/repositories/auth_repository.dart';
 import 'package:file_structure_flutter/resources/app_locale.dart';
 import 'package:file_structure_flutter/resources/app_themes.dart';
