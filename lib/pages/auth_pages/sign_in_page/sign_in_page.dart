@@ -44,15 +44,17 @@ class SignInPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text(
-                    'Discover\nBest Dates\nTo Fly',
-                    style: TextStyle(
-                      fontSize: 54.0,
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1.8,
+                  Flexible(
+                    child: Text(
+                      'Discover\nBest Dates\nTo Fly',
+                      style: TextStyle(
+                        fontSize: 54.0,
+                        color: AppColors.textPrimary,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 1.8,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: 24.0,
